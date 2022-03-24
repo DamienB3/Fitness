@@ -1,0 +1,480 @@
+
+/* Commenting out because it is not compatible with Firefox
+:root {
+    color-scheme: light dark;
+} */
+/* Use to test
+* {
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+body {
+    height: 100%;
+    margin: 0;
+
+}
+/* .intro, #arnold {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    
+} */
+.intro {
+ /*   background-image: url(../images/arnold.jpg); */
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+ /*   position: relative; */
+}
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    --scroll-behavior: smooth;
+
+}
+/* Text sliding from top */
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+#divintro {
+    animation: 1.5s ease-out 0s 1 slideInFromTop;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+#introtitle {
+    background-color: #0000008f;
+    display: inline;
+    padding: 0;
+}
+#introbutton  {
+        font-size: 35px;
+        background-color: red;
+        padding: 0 1%;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 25px;
+      }
+
+      #introbutton:hover {
+          background-color: #ff00008f;
+      }
+
+/* Removes gap from sections */
+ .muscle {
+    margin-top: -3.3em;
+}
+.cardio {
+    margin-top: -3.33em;
+}
+#headertips {
+    padding-top: 3em;
+    grid-area: header;
+
+}
+#tips {
+    list-style-type: none;
+    padding: .6em;
+   
+}
+
+
+#divtips {
+  /*  width: 10vw;
+    padding-left: 10em;
+    margin-top: 10em; */
+    grid-area: main;
+    display: grid;
+    
+}
+/* Navigation */
+#nav {
+    grid-area: menu;
+    display: none;
+
+  /*  position: fixed;
+    top: 150px; */
+    
+}
+#navlist {
+    list-style-type: none;
+    position: fixed;
+    bottom: 5%;
+    padding-left: .55em;
+}
+#muscle, #cardio, #contact {
+    font-family: 'Staatliches', cursive, sans-serif;
+
+}
+
+#safety {
+    font-family: 'Staatliches', cursive, sans-serif;
+
+   display: grid;
+   grid-template-areas:
+   'header header header header header header'
+   'menu main main main right right'
+   'menu footer footer footer footer footer';
+}
+/* COMMENTING OUT DARK/LIGHT MODE TO FIGURE OUT COLOR SCHEME 
+
+
+html[data-theme='dark'], .cardio[data-theme='dark'] {
+   background-color: #171717;
+   color: white;
+  } */
+
+  #gif2 {
+    width: 100%;
+    height: 89%;
+  }
+
+  #cardiotitle {
+    text-align: center;
+    padding-top: 0.2em;
+    font-size: 4rem;
+  }
+
+  #contact {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: -1.25em;
+ /*   height: 66vh; */
+    
+  }
+  #switch {
+      cursor: pointer;
+      opacity: 0;
+  }
+  input[type=checkbox] {
+    transform: scale(1.5);
+}
+/* This will stop +1 from appearing on same line and checkbox too */
+#calcstrengths {
+    margin-right: 0.5em;
+}
+
+/* Contact Form */
+
+.fcf-form-control {
+    border-radius: 1rem;
+}
+
+#fcf-button {
+    background-color: #37d33c;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.125em;
+    line-height: 2.25em;
+    width: 20%;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#fcf-button:hover {
+    background-color: #37d33c75 !important;
+    /* #37d33c75 // #e0e0e026*/
+
+}
+
+#Email {
+    width: 15em;
+    padding: 7px;
+}
+#Message {
+    width: 25em;
+    padding: 7px;
+    max-width: 450px;
+}
+::placeholder {
+    opacity: .8;
+    color: black;
+}
+/* Contact Form END */
+.toggle-container {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 24px;
+        height: 24px;
+        background:
+        linear-gradient(to bottom,
+        currentColor 4px,transparent 0)
+        no-repeat 5px -6px/2px 6px,
+        linear-gradient(to bottom,
+        currentColor 4px,transparent 0)
+        no-repeat 5px 14px/2px 6px,
+        linear-gradient(to bottom,
+        currentColor 4px,transparent 0)
+        no-repeat -8px 5px/6px 2px,
+        linear-gradient(to bottom,
+        currentColor 4px,transparent 0)
+        no-repeat 14px 5px/6px 2px;
+        border-radius: 100px;
+        box-shadow: inset 0 0 0 2px;
+        border: 6px solid transparent
+       }
+       
+       .toggle-container::after,
+       .toggle-container::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        border-right: 4px solid;
+        border-left: 4px solid;
+        left: -6px;
+        top: 5px
+       }
+       
+       .toggle-container::before {
+        transform: rotate(-45deg)
+       }
+       
+       .toggle-container::after {
+        transform: rotate(45deg)
+       } 
+#boxes {
+    cursor: pointer;
+}
+@media screen and (max-width: 319px){
+    #divtips {
+        overflow: overlay;
+    }
+    #introbutton {
+        font-size: smaller;
+    }
+}
+@media screen and (min-width: 320px){
+    #divtips {
+        overflow: overlay;
+    }
+   #tips {
+    font-size: calc(19px + 6 * ((100vw - 320px) / 680));
+   }
+   #headertips {
+    font-size: calc(26px + 6 * ((100vw - 320px) / 680));
+   }
+   #introtitle {
+    font-size: calc(30px + 6 * ((100vw - 320px) / 680));
+   }
+   #introbutton {
+    font-size: calc(35px + 6 * ((100vw - 320px) / 680));
+   }
+   .muscle {
+    margin-top: -3.4em;
+}
+   
+}
+#Message {
+    max-height: 130px;
+}
+
+@media screen and (max-width: 1599px){
+#firstpara {
+    font-size: 2.5rem;
+}
+.paras {
+    font-size: 2.5rem;
+}
+#firstpara2 {
+    font-size: 2.5rem;
+}
+
+}
+
+@media screen and (min-width: 1600px){
+    #tips {
+        font-size: 60px;
+    }
+    #headertips {
+        font-size: 72px;
+    }
+    #introtitle {
+        font-size: 74px;
+    }
+    #introbutton {
+        font-size: 80px;
+    }
+    #firstpara, #firstpara2 {
+        font-size: 60px;
+    }
+    .paras {
+        font-size: 60px;
+    }
+    #calcstrengths, #calccardios {
+        font-size: 60px;
+    }
+    #Message {
+        max-height: 430px;
+    }
+}
+
+
+/* #divintro {
+    align-items: center;
+    text-align: center;
+    padding-top: 20%;
+} */
+
+/* Responsiveness */
+/*@media screen and (max-width: 880px) {
+    #arnold, .intro {
+     /*   width: 100%;
+        height: 100%;
+       background: fixed;
+        background-position-x: -200px; */
+        
+/*    } 
+    
+} */
+
+/* TRIED FIXING RESPONSIVE IMAGE FROM THIS SITE:h
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_full_page   
+
+*/
+#strengthtitle {
+    text-align: center;
+    padding-top: 0.2em;
+    font-size: 4rem;
+}
+
+#container {
+    display: grid;
+ grid-template-columns: auto auto auto; 
+  height: 80vh;
+  padding-left: 3em;
+  font-size: 20px;
+}
+
+#container2 {
+    display: grid;
+ grid-template-columns: auto auto auto; 
+  height: 80vh;
+  padding-left: 3em;
+  font-size: 20px;
+}
+
+#centeritem, #centeritem2 {
+    padding-left: 5%;
+    padding-right: 5%;    
+}
+#rightitem, #rightitem2 {
+    padding-right: 0.5em;
+    
+}
+#gif {
+    width: 100%;
+               height: 98%;
+               object-fit: fill;
+}
+@media screen and (max-width: 791px){
+    #container, #container2 {
+        display: inline-block;
+        object-fit: contain;
+    }
+    #leftitem, #leftitem2 {
+        display: inline-block;
+        object-fit: contain;
+        padding-right: 4%;
+    }
+
+    #centeritem, #centeritem2 {
+     /*   width: 200px!important;
+        max-width: 200px!important;
+        height: 200px;
+        max-height: 200px; */
+        display: inline-block;
+        object-fit: contain;
+    }
+    #rightitem, #rightitem2 {
+        display: inline-block;
+        object-fit: contain;
+    }
+  /*  * {
+        border: 2px red solid;
+    } */
+}
+
+@media screen and (max-width: 768px){
+
+#centeritem, #centeritem2 {
+    padding-left: 0%;
+  /*  padding-right: 20%; */
+}
+
+}
+@media screen and (min-height: 1360px){
+    #gif {
+        height: 32%;
+    }
+}
+/*
+@media screen and (max-width: 370px){
+    html,body
+    {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+    }
+
+} */
+@media screen and (min-height: 318px){
+   
+}
+
+@media screen and (max-width: 380px){
+    label.fcf-label {
+        font-size: 2rem;
+    }
+}
+@media screen and (min-height: 700px) and (max-height: 830px){
+    #contact {
+        height: 83vh;
+    }
+}
+
+@media screen and (min-height: 900px){
+    #contact {
+        height: 90vh;
+    }
+    ::placeholder {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 550px){
+   
+   
+    #fcf-button {
+        font-size: 1rem;
+    }
+    #Message {
+        width: 15em;
+        max-width: 15em;
+    }
+    #Email {
+        width: 12em;
+    }
+}
+

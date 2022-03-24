@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- 
+    2) add keyframes bounce to button?
+    3) Fix padding against div
+    3) Add a slight padding to backgroundcolor text w/ responsiveness
+    7) checkbox replace with sun ehh
+    8 ) adding spacing between strength containers and fix overlay and responsive
+    10) fix mobile scrolling fade in jquery
+    12 ) update margin-top text to fill in gaps but check mobile response
+    14) Edit php headers for new email
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>A Better You</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="images/strong.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).scroll(function() {
+  var scrolled = $(this).scrollTop();
+  
+  if (scrolled > 260) {
+    $('#nav').fadeIn();
+  } else {
+    $('#nav').fadeOut();
+  }
+});
+    </script>
+</head>
+<body>
+    <section class="intro" id="intro">
+        <div class="introdiv">
+         <img src="images/arnold.jpg" alt="Arnold Posing" id="arnold" style="width: 100%; height: 100vh;">
+            <div id="divintro">
+            <h1 id="introtitle" style="color: white;">Ready for a <i>healthier</i> you?</h1>
+            <h2><a id="introbutton" href="#safety">Get Started</a></h2>
+        </div>
+    </div>
+    </section>
+
+<section class="safety">
+<div id="safety" style="height: 100vh;">
+        <div id="headertips">Before working out, ALWAYS remember to:</div>
+        <!--Side Nav bar-->
+        <div id="nav">
+        <ul id="navlist">
+            <li><a href="#intro"><img id="darkhome" src="images/homes.png" title="Home"></a></li>
+            <li><a href="#safety"><img id="darkcaution" src="images/caution-sign.png" title="Safety Tips"></a></li>
+            <li><a href="#muscle"><img id="darkmuscles" src="images/muscles.png" title="Strength Training"></a></li>
+            <li><a href="#cardio"><img id="darkruns" src="images/running.png" title="Cardio"></a></li>
+            <li><a href="#contact"><img id="darkmails" src="images/mails.png" title="Contact Me"></a></li>
+            <div class="toggle-container">
+                <input type="checkbox" id="switch"/><label for="switch"></label>
+                <!-- Removing 'Toggle' placeholder and switch to opacity: 0, now figure why only certain areas are clickable try z-index: 1 instead of position relative-->
+            </div>
+          <!--  <li class="toggle-container" style="padding-top: 10px;"><img type="checkbox" id="switch" name="theme" src="images/dark-mode.png"></li> -->
+        </ul>
+    </div>
+        <!--Safety Tips    CODE RESPONSIVENESS and BUTTON LIGHT MODE-->
+    <div id="divtips">
+        <ul>
+        <li id="tips">&#9989; Practice good form.</li>
+        <li id="tips">&#9989; Safely warm-up beforehand.</li>
+        <li id="tips">&#9989; Drink plenty of water.</li>
+        <li id="tips">&#9989; If you are at a gym, please practice social distancing.</li>
+        <li id="tips">&#9989; Pace yourself: Fitness is a lifetime commitment.</li>
+        <li id="tips">&#9989; Listen to your body: Take a rest day if needed, do <strong>NOT</strong> overexert yourself.</li>
+        </ul>
+        
+    </div>
+        </div>
+    </section>
+    
+
+    <section class="muscle">
+        <div id="muscle">
+        <h1 id="strengthtitle">Building Strength</h1>
+        <div id="container">
+            <div id="leftitem">
+               <img title="Arnold lifting gif" alt="Arnold Lifting" src="images/arnoldgif.gif" id="gif"/>
+            </div>
+            <div id="centeritem">
+           
+            <p id="firstpara">The key to a healthier you is by working on your muscles. Whether you are in a gym or your home, there are numerous ways to strengthen your muscles: </p>
+
+            </div>
+            
+            <div id="rightitem">
+                <form>
+              <p class="paras">Pushups: <input id="boxes" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+              <p class="paras">Pullups: <input id="boxes" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+              <p class="paras">Leg Curls: <input id="boxes" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+              <p class="paras">Arm Curls: <input id="boxes" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+                <p id="calcstrengths">Strengths added:</p>
+                <br>
+            </form>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <section class="cardio">
+        <div id="cardio">
+        <h1 id="cardiotitle">Cardio</h1>
+        <div id="container2">
+            
+            <div id="leftitem2">
+                <img title="Arnold rowing gif" alt="Arnold Rowing" src="images/arnoldrow.gif" id="gif2"/>
+             </div>
+            
+            
+
+            <div id="centeritem2">
+           
+                <p id="firstpara2">It is important to not neglect cardiovasicular activities on your fitness journey. There are multiple ways to get your heart rate up, and move your body:</p>
+    
+                </div>
+
+                <div id="rightitem2">
+                    <form>
+                  <p class="paras">Running: <input id="boxes" name="cardio" type="checkbox" onclick="cardios();"/><label></label></p>
+                  <p class="paras">Swimming: <input id="boxes" name="cardio" type="checkbox" onclick="cardios();"/><label></label></p>
+                  <p class="paras">Biking: <input id="boxes" name="cardio" type="checkbox" onclick="cardios();"/><label></label></p>
+                  <p class="paras">Burpees: <input id="boxes" name="cardio" type="checkbox" onclick="cardios();"/><label></label></p>
+                    <p id="calccardios">Cardios added:</p>
+                    <br>
+                </form>
+                </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <section class="credits">
+        <div id="contact">
+        <h1>Let's chat</h1>
+        <div class="fcf-body">
+
+            <div id="fcf-form">        
+            <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+                
+        
+                <div class="fcf-form-group">
+                    <label for="Email" class="fcf-label">Your email address:</label>
+                    <div class="fcf-input-group">
+                        <input type="email" id="Email" placeholder="Enter your email here:" name="Email" class="fcf-form-control" autofocus="" required="">
+                    </div>
+                </div>
+        
+                <div class="fcf-form-group">
+                    <label for="Message" class="fcf-label">Your message:</label>
+                    <div class="fcf-input-group">
+                        <textarea id="Message" placeholder="Any message typed here will be received. Thank you!" name="Message" class="fcf-form-control" rows="4" maxlength="3000" required=""></textarea>
+                    </div>
+                </div>
+        
+                <div class="fcf-form-group">
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send</button>
+                </div>
+                </form>
+            <footer>
+                <p><a target="_blank" href="https://linkedin.com/in/damien-brooks-a12001105"><img src="images/linkedin.png" id="darklinkedin" width="30" alt=""></a>
+                    <a target="_blank" href="https://github.com/DamienB3"><img src="images/github-logo.png" id="darkgithub" width="30" alt=""></a></p>
+            </footer>
+            </div>
+        
+            
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/zenscroll@4.0.2/zenscroll-min.js"></script>
+    <script src="styles/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+#message {
+  background: #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #4eb980;
+
+-moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background: #544d55;
+    border-radius: 4px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.125em;
+    line-height: 3.25em;
+    min-width: 15em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+    </style>
+  </head>
+<body>
+
+
+<form>
+  <p class="paras">Pushups: <input class="boxz" id="boxes" value="strength" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+  <p class="paras">Pullups: <input class="boxz" id="boxes" value="strength" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+  <p class="paras">Leg Curls: <input class="boxz" id="boxes" value="strength" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+  <p class="paras">Arm Curls: <input class="boxz" id="boxes" value="strength" name="strength" type="checkbox" onclick="strengths();"/><label></label></p>
+    <p id="calcstrengths">Strengths added:</p>
+    <p id="calcstrengths2">Strengths added:</p>
+
+    <br>
+</form>
+<ul>
+<li><input type="submit" id="message" value="Send Message"></li>
+</ul>
+<script>
+function strengths() {
+    let count = 0;
+      var strength = document.forms[0];
+      var txt = "";
+      var i;
+
+      for (i = 0; i < strength.length; i++) {
+        if (strength[i].checked) {
+          txt = txt + strength[i].value + " " + count;
+          count ++;
+          localStorage.setItem("counting", count);
+          
+
+        }
+        if (!strength[i].checked) {
+          let count = 0;
+          localStorage.setItem("counting", count);
+
+
+        }
+        localStorage.setItem("boxes", strength[i].checked);
+
+
+      }         
+      document.getElementById("calcstrengths").innerHTML = "Strengths added: +" + count;
+
+    }              
+     document.getElementById("calcstrengths").textContent =  "Strengths added: +" + localStorage.getItem("counting");
+
+
+
+
+
+    
+</script>
+</body>
+</html>
